@@ -1,0 +1,18 @@
+{
+  "name": "hwaymap-report-automation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "훼이맵 상담 리포트/콘텐츠 자동화 스크립트 모음",
+  "scripts": {
+    "fill": "node ai_fill_sessions.js",
+    "fill:dry": "node ai_fill_sessions.js --dry-run",
+    "reports": "node batch_generate_reports.js",
+    "drafts": "node generate_content_draft.js",
+    "pipeline": "node ai_fill_sessions.js && node batch_generate_reports.js && node generate_content_draft.js"
+  },
+  "dependencies": {
+    "docx": "^9.1.0",
+    "exceljs": "^4.4.0",
+    "xlsx": "^0.18.5"
+  }
+}
