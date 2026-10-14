@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>향기카드 20 사용설명서 | 훼이맵FateMap</title>
+<meta name="description" content="데일리 에너지 솔루션 아로마테라피 20 — 싱글 에센셜오일 20종과 향기카드 20장 사용설명서">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f1230; --bg2:#171b45; --panel:#1d2152; --line:rgba(212,175,95,.28);
+  --gold:#d4af5f; --gold-soft:#e9d3a0; --text:#eeeaf6; --muted:#b4b0cc;
+  --violet:#7b6bc4; --warn:#e8a17a; --ok:#9fd3b0;
+  --serif:'Nanum Myeongjo',serif; --sans:'Noto Sans KR',system-ui,sans-serif; --en:'Cormorant Garamond',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:400;line-height:1.75;font-size:16px;
+  background-image:radial-gradient(ellipse at 20% 0%,rgba(123,107,196,.25),transparent 55%),radial-gradient(ellipse at 90% 30%,rgba(60,70,160,.25),transparent 50%);
+  background-attachment:fixed}
+a{color:var(--gold-soft)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:72px 0;border-top:1px solid var(--line)}
+.eyebrow{font-family:var(--en);font-style:italic;color:var(--gold);letter-spacing:.12em;font-size:1.05rem}
+h1,h2,h3{font-family:var(--serif);font-weight:800;line-height:1.35}
+h2{font-size:clamp(1.5rem,3.6vw,2rem);margin:6px 0 20px}
+h3{font-size:1.15rem;margin-bottom:8px;color:var(--gold-soft)}
+p.lead{color:var(--muted);max-width:720px}
+.step-no{font-family:var(--en);color:var(--gold);font-size:.95rem;letter-spacing:.1em}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(15,18,48,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:18px;overflow-x:auto;white-space:nowrap;padding-top:12px;padding-bottom:12px;scrollbar-width:none}
+nav a{color:var(--muted);text-decoration:none;font-size:.9rem}
+nav a:hover{color:var(--gold-soft)}
+
+/* hero */
+.hero{padding:96px 0 80px;text-align:center;border-top:none}
+.hero h1{font-size:clamp(1.9rem,5.4vw,3.1rem);margin:14px 0 10px}
+.hero .sub{font-family:var(--en);font-size:1.3rem;color:var(--gold-soft)}
+.hero p{max-width:640px;margin:22px auto 0;color:var(--muted)}
+.orn{display:block;margin:0 auto;width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+/* grid cards */
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+.box p,.box li{color:var(--muted);font-size:.95rem}
+.box ul{padding-left:18px}
+.tag{display:inline-block;font-size:.75rem;padding:2px 10px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);margin-bottom:10px}
+
+/* anatomy */
+.anatomy{display:grid;grid-template-columns:minmax(200px,280px) 1fr;gap:28px;align-items:center}
+.mock{aspect-ratio:9/16;border-radius:14px;border:2px solid var(--gold);position:relative;overflow:hidden;
+  background:radial-gradient(circle at 60% 55%,rgba(233,211,160,.18),transparent 40%),linear-gradient(160deg,#232866,#3a2a6e 60%,#191c4a)}
+.mock .tl{position:absolute;top:14px;left:14px;font-size:.72rem;line-height:1.4}
+.mock .tl b{font-family:var(--en);font-size:.95rem;color:var(--gold-soft);display:block}
+.mock .circle{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);width:62%;aspect-ratio:1;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:2.4rem;color:var(--gold-soft)}
+.mock .br{position:absolute;right:12px;bottom:10px;font-family:var(--en);font-size:.8rem;color:var(--gold)}
+.mock .pin{position:absolute;width:22px;height:22px;border-radius:50%;background:var(--gold);color:var(--bg);font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.legend li{list-style:none;display:flex;gap:12px;margin-bottom:12px;color:var(--muted)}
+.legend li span{flex:0 0 24px;height:24px;border-radius:50%;background:var(--gold);color:var(--bg);font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center}
+.legend li b{color:var(--text)}
+
+/* ritual steps */
+.steps{counter-reset:s;display:grid;gap:14px}
+.steps .box{display:flex;gap:18px}
+.steps .num{flex:0 0 46px;height:46px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--en);font-size:1.3rem;color:var(--gold)}
+
+/* table */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:520px}
+th,td{padding:12px 14px;text-align:left;border-bottom:1px solid rgba(212,175,95,.15)}
+th{background:var(--bg2);color:var(--gold-soft);font-weight:500}
+td{color:var(--muted)}
+tr:last-child td{border-bottom:none}
+
+/* card catalogue */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.filters button,.btn{font-family:var(--sans);font-size:.9rem;padding:8px 18px;border-radius:999px;border:1px solid var(--gold);background:transparent;color:var(--gold-soft);cursor:pointer}
+.filters button.on,.btn.solid{background:var(--gold);color:var(--bg);font-weight:700}
+.cat{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.c{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;position:relative}
+.c .no{font-family:var(--en);color:var(--gold);font-size:.9rem}
+.c .sym{position:absolute;top:14px;right:16px;font-size:1.5rem;color:var(--gold-soft)}
+.c h4{font-family:var(--serif);font-size:1.1rem;margin:2px 0}
+.c .oil{color:var(--text);font-weight:500}
+.c .en{font-family:var(--en);font-style:italic;color:var(--gold-soft);font-size:.95rem}
+.c .kw{margin:8px 0;color:var(--text)}
+.c .meta{font-size:.8rem;color:var(--muted)}
+.c.special{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
+
+/* draw */
+.draw{text-align:center}
+.draw-result{margin:24px auto 0;max-width:420px;min-height:40px}
+.draw-result .c{text-align:left}
+
+/* notices */
+.warn{border-left:3px solid var(--warn)}
+.warn h3{color:var(--warn)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chips span{font-size:.82rem;padding:3px 10px;border-radius:999px;background:rgba(255,255,255,.06);color:var(--text)}
+
+details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:500;color:var(--text)}
+details p{margin-top:10px;color:var(--muted);font-size:.95rem}
+
+footer{padding:40px 0 60px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:.85rem}
+footer .brand{font-family:var(--en);font-size:1.3rem;color:var(--gold)}
+
+@media (max-width:640px){
+  body{font-size:15px}
+  section{padding:56px 0}
+  .wrap{padding:0 16px}
+  .anatomy{grid-template-columns:1fr}
+  .mock{max-width:240px;margin:0 auto}
+  .steps .box{flex-direction:column;gap:10px}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a href="#intro">제품 소개</a><a href="#box">구성품</a><a href="#read">카드 읽는 법</a><a href="#ritual">사용 방법</a>
+  <a href="#scent">향 즐기는 법</a><a href="#cards">카드 20장</a><a href="#draw">오늘의 카드</a><a href="#rose">7번 카드</a>
+  <a href="#safety">안전 수칙</a><a href="#faq">FAQ</a>
+</div></nav>
+
+<header class="hero wrap" id="intro">
+  <span class="eyebrow">HOW TO USE · 사용설명서</span>
+  <h1>데일리 에너지 솔루션<br>아로마테라피 20</h1>
+  <div class="sub">20 Scents · 20 Cards · 12 Signs &amp; 8 Planets</div>
+  <span class="orn" style="margin-top:26px"></span>
+  <p>하늘의 별자리와 행성, 그리고 식물의 향을 하나씩 짝지은 20장의 향기카드입니다.<br>
+  하루 3분, 카드 한 장과 향 한 가지로 오늘의 나를 위한 작은 의식을 시작해 보세요.</p>
+</header>
+
+<!-- 구성품 -->
+<section id="box"><div class="wrap">
+  <span class="eyebrow">What's Inside</span>
+  <h2>구성품</h2>
+  <div class="grid g3">
+    <div class="box"><span class="tag">기본 구성</span><h3>싱글 에센셜오일 20종</h3><p>블렌딩하지 않은 단일 식물 오일 20가지. 카드 번호와 병 번호가 같아 바로 짝을 찾을 수 있습니다.</p></div>
+    <div class="box"><span class="tag">기본 구성</span><h3>향기카드 20장</h3><p>12별자리 카드 12장 + 8행성 카드 8장. 앞면에는 일러스트와 키워드, 함께 제공되는 안내에는 오늘의 메시지와 리추얼이 담겨 있습니다.</p></div>
+    <div class="box"><span class="tag">프리미엄 에디션</span><h3>로즈 오토 1ml 추가</h3><p>다마스크 로즈(Rosa damascena)를 증기 증류한 천연 로즈 오일. 7번 천칭자리 카드의 두 번째 향입니다.</p></div>
+  </div>
+</div></section>
+
+<!-- 카드 읽는 법 -->
+<section id="read"><div class="wrap">
+  <span class="eyebrow">Reading the Card</span>
+  <h2>카드 읽는 법</h2>
+  <div class="anatomy">
+    <div class="mock" aria-label="향기카드 앞면 구성 예시">
+      <div class="tl"><b>ROSEMARY</b>Passion, Courage<br>로즈마리 / 열정·용기</div>
+      <span class="pin" style="top:10px;right:10px">1</span>
+      <div class="circle">♈</div>
+      <span class="pin" style="top:34%;left:8px">2</span>
+      <span class="pin" style="top:18%;left:44%">3</span>
+      <span class="pin" style="bottom:10px;left:10px">4</span>
+      <div class="br">FateMap</div>
+    </div>
+    <ul class="legend">
+      <li><span>1</span><div><b>오일 이름과 키워드</b><br>왼쪽 위에 영문·한글 오일명과 두 개의 키워드가 적혀 있습니다. 키워드는 20장 모두 겹치지 않습니다.</div></li>
+      <li><span>2</span><div><b>원형 금테 속 인물</b><br>이마에는 해당 별자리·행성 기호가, 머리 장식에는 그 오일의 식물이 그려져 있습니다.</div></li>
+      <li><span>3</span><div><b>배경의 별빛</b><br>별자리 카드는 성좌선, 행성 카드는 행성이 배경에 펼쳐집니다.</div></li>
+      <li><span>4</span><div><b>카드 안내 내용</b><br>천체 정보(원소·양태·지배성) · 향 묘사 · 오늘의 메시지 · 데일리 리추얼 · 블렌딩 파트너 · 매칭 이야기 · 주의사항</div></li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- 사용 방법 -->
+<section id="ritual"><div class="wrap">
+  <span class="eyebrow">Three Ways to Choose</span>
+  <h2>카드를 고르는 세 가지 방법</h2>
+  <div class="grid g3">
+    <div class="box"><span class="step-no">WAY 01</span><h3>오늘의 카드 뽑기</h3><p>카드 20장을 뒤집어 섞고, 마음이 가는 한 장을 고릅니다. 가장 기본적이고 즐거운 방법입니다.</p></div>
+    <div class="box"><span class="step-no">WAY 02</span><h3>내 별자리 카드</h3><p>생일로 태양 별자리를 찾아 1~12번 중 내 카드를 고릅니다. 생일 주간이나 새로운 시작 앞에 추천합니다.</p></div>
+    <div class="box"><span class="step-no">WAY 03</span><h3>테마로 고르기</h3><p>오늘 필요한 분위기를 키워드에서 찾습니다. 집중이 필요하면 ☿ 수성, 관계를 돌보고 싶다면 ♀ 금성처럼요.</p></div>
+  </div>
+
+  <h2 style="margin-top:56px">하루 3분 데일리 리추얼</h2>
+  <div class="steps">
+    <div class="box"><div class="num">1</div><div><h3>고르기</h3><p>위의 세 가지 방법 중 하나로 오늘의 카드를 고릅니다.</p></div></div>
+    <div class="box"><div class="num">2</div><div><h3>읽기</h3><p>카드의 두 키워드와 오늘의 메시지를 소리 내어 한 번 읽어 봅니다.</p></div></div>
+    <div class="box"><div class="num">3</div><div><h3>향 맡기</h3><p>같은 번호의 오일 병을 열어 코에서 한 뼘(10~15cm) 정도 떨어뜨리고, 천천히 세 번 깊게 호흡합니다.</p></div></div>
+    <div class="box"><div class="num">4</div><div><h3>기록하기</h3><p>떠오른 느낌이나 오늘 하고 싶은 일 하나를 한 줄로 적어 둡니다. 쌓인 기록이 나만의 향기 일기가 됩니다.</p></div></div>
+  </div>
+
+  <h3 style="margin-top:40px">생일로 내 별자리 찾기</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>카드</th><th>별자리</th><th>생일(대략)</th><th>카드</th><th>별자리</th><th>생일(대략)</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>♈ 양자리</td><td>3/21 – 4/19</td><td>7</td><td>♎ 천칭자리</td><td>9/23 – 10/22</td></tr>
+      <tr><td>2</td><td>♉ 황소자리</td><td>4/20 – 5/20</td><td>8</td><td>♏ 전갈자리</td><td>10/23 – 11/21</td></tr>
+      <tr><td>3</td><td>♊ 쌍둥이자리</td><td>5/21 – 6/21</td><td>9</td><td>♐ 사수자리</td><td>11/22 – 12/21</td></tr>
+      <tr><td>4</td><td>♋ 게자리</td><td>6/22 – 7/22</td><td>10</td><td>♑ 염소자리</td><td>12/22 – 1/19</td></tr>
+      <tr><td>5</td><td>♌ 사자자리</td><td>7/23 – 8/22</td><td>11</td><td>♒ 물병자리</td><td>1/20 – 2/18</td></tr>
+      <tr><td>6</td><td>♍ 처녀자리</td><td>8/23 – 9/22</td><td>12</td><td>♓ 물고기자리</td><td>2/19 – 3/20</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead" style="margin-top:10px;font-size:.85rem">경계일은 해마다 하루 정도 달라질 수 있습니다.</p>
+</div></section>
+
+<!-- 향 즐기는 법 -->
+<section id="scent"><div class="wrap">
+  <span class="eyebrow">Enjoying the Scent</span>
+  <h2>향을 즐기는 방법</h2>
+  <div class="grid g2">
+    <div class="box"><h3>병 입구에서 바로</h3><p>가장 간단한 방법. 병을 코에서 10~15cm 떨어뜨려 향을 맡습니다. 병 입구에 코를 직접 대지 마세요.</p></div>
+    <div class="box"><h3>티슈·손수건</h3><p>티슈에 1~2방울 떨어뜨려 책상이나 베개 옆에 둡니다. 옷이나 원목 가구에는 얼룩이 남을 수 있으니 직접 떨어뜨리지 마세요.</p></div>
+    <div class="box"><h3>디퓨저</h3><p>물을 넣는 초음파 디퓨저라면 제품 설명서의 권장량(보통 3~5방울)에 맞춰 사용하고, 환기를 곁들여 주세요.</p></div>
+    <div class="box"><h3>바디·롤온 블렌딩</h3><p>반드시 캐리어 오일(호호바·스위트 아몬드 등)에 희석합니다. 캐리어 오일 10ml에 에센셜오일 2~4방울(약 1~2%)이 기준이며, 처음에는 가장 낮은 농도로 시작하세요.</p></div>
+  </div>
+  <div class="box" style="margin-top:16px"><h3>블렌딩 팁</h3><p>카드마다 20종(+로즈) 안에서 어울리는 블렌딩 파트너가 안내되어 있습니다. 두 장을 함께 뽑았다면 두 오일을 1:1로 섞어 향을 비교해 보는 것도 좋은 방법입니다.</p></div>
+</div></section>
+
+<!-- 카드 목록 -->
+<section id="cards"><div class="wrap">
+  <span class="eyebrow">The 20 Cards</span>
+  <h2>향기카드 20장 한눈에 보기</h2>
+  <div class="filters" role="tablist">
+    <button class="on" data-f="all">전체 20</button>
+    <button data-f="sign">별자리 12</button>
+    <button data-f="planet">행성 8</button>
+  </div>
+  <div class="cat" id="cat"></div>
+  <p class="lead" style="margin-top:18px;font-size:.88rem">태양과 달 카드는 따로 없습니다. 전통적으로 태양에 속한 식물의 이야기는 ♌ 사자자리에, 달에 속한 식물의 이야기는 ♋ 게자리에 담았습니다.</p>
+</div></section>
+
+<!-- 오늘의 카드 -->
+<section id="draw"><div class="wrap draw">
+  <span class="eyebrow">Today's Card</span>
+  <h2>온라인으로 오늘의 카드 뽑기</h2>
+  <p class="lead" style="margin:0 auto">카드가 곁에 없을 때, 버튼을 눌러 오늘의 향을 만나 보세요.</p>
+  <div style="margin-top:22px"><button class="btn solid" id="drawBtn">카드 한 장 뽑기</button></div>
+  <div class="draw-result" id="drawResult" aria-live="polite"></div>
+</div></section>
+
+<!-- 7번 카드 -->
+<section id="rose"><div class="wrap">
+  <span class="eyebrow">Card No.7 · Geranium &amp; Rose</span>
+  <h2>7번 천칭자리 카드와 로즈 오토</h2>
+  <div class="grid g2">
+    <div class="box"><h3>두 가지 향이 함께하는 카드</h3>
+      <p>7번 카드는 20장 가운데 유일하게 두 식물을 담은 카드입니다. 제라늄과 로즈는 모두 금성의 식물로, 천칭의 양쪽 접시에 나란히 놓여 있습니다.</p>
+      <p style="margin-top:10px;color:var(--gold-soft);font-family:var(--serif)">“제라늄이 장미를 닮은 균형이라면,<br>로즈는 그 균형이 향하는 근원입니다.”</p>
+      <p style="margin-top:10px">기본 구성에는 제라늄 오일이, 프리미엄 에디션에는 로즈 오토 1ml가 함께 들어 있습니다.</p>
+    </div>
+    <div class="box"><h3>로즈 오토가 굳었어요</h3>
+      <p>정상입니다. 로즈 오토에는 천연 성분인 스테아롭텐이 들어 있어 서늘한 곳에서 하얗게 굳거나 결정이 생길 수 있습니다.</p>
+      <p style="margin-top:10px">병을 손으로 감싸 잠시 따뜻하게 쥐고 있으면 다시 맑게 녹습니다. 뜨거운 물이나 전자레인지는 사용하지 마세요.</p>
+      <p style="margin-top:10px">훼이맵FateMap은 합성 ‘로즈 프래그런스 오일’을 사용하지 않습니다.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- 안전 -->
+<section id="safety"><div class="wrap">
+  <span class="eyebrow">Safety First</span>
+  <h2>안전 수칙</h2>
+  <div class="grid g2">
+    <div class="box warn"><h3>꼭 지켜 주세요</h3><ul>
+      <li>원액을 피부에 직접 바르지 말고, 반드시 희석해서 사용하세요.</li>
+      <li>먹거나 마시지 마세요. 눈·코·입 안 등 점막에 닿지 않게 하세요.</li>
+      <li>피부에 처음 쓸 때는 팔 안쪽에 소량을 발라 반응을 먼저 확인하세요.</li>
+      <li>어린이와 반려동물의 손이 닿지 않는 곳에 보관하세요. 반려동물 곁에서의 사용은 전문가 확인이 필요합니다.</li>
+      <li>임신·수유 중이거나 치료 중인 경우, 사용 전에 전문가와 상담하세요.</li>
+      <li>눈에 들어가면 물이 아닌 식물성 오일로 먼저 닦아낸 뒤 물로 헹구고, 이상이 있으면 의사와 상담하세요.</li>
+    </ul></div>
+    <div class="box"><h3>오일별 주의 표시</h3>
+      <p><b style="color:var(--text)">광독성</b> — 피부에 사용한 뒤 햇빛·자외선 노출을 피하세요.</p>
+      <div class="chips"><span>13 레몬</span><span>16 그레이프후룻</span><span>14 버가못 (FCF 제품 권장)</span></div>
+      <p style="margin-top:14px"><b style="color:var(--text)">피부 자극 주의</b> — 낮은 농도로, 오래되어 산화된 오일은 사용하지 마세요.</p>
+      <div class="chips"><span>18 레몬그라스 (저농도 희석)</span><span>2 일랑일랑</span><span>15 티트리</span></div>
+      <p style="margin-top:14px"><b style="color:var(--text)">임신 중 주의</b></p>
+      <div class="chips"><span>19 클라리세이지</span><span>1 로즈마리</span><span>9 주니퍼베리</span></div>
+      <p style="margin-top:14px"><b style="color:var(--text)">영유아 주의</b></p>
+      <div class="chips"><span>3 페퍼민트</span><span>11 유칼립투스</span></div>
+      <p style="margin-top:14px"><b style="color:var(--text)">알레르기</b> — 국화과 식물에 알레르기가 있다면 사용하지 마세요.</p>
+      <div class="chips"><span>4 로먼 캐모마일</span></div>
+    </div>
+  </div>
+  <div class="box" style="margin-top:16px"><h3>보관 방법</h3><ul>
+    <li>사용 후 뚜껑을 꼭 닫고, 직사광선을 피해 서늘한 곳에 세워서 보관하세요.</li>
+    <li>레몬·오렌지·그레이프후룻·버가못 등 시트러스 계열은 비교적 빨리 산화되므로 개봉 후 가급적 빨리 사용하세요.</li>
+    <li>향이 눈에 띄게 변했거나 탁해졌다면 피부에는 사용하지 마세요.</li>
+  </ul></div>
+</div></section>
+
+<!-- FAQ -->
+<section id="faq"><div class="wrap">
+  <span class="eyebrow">FAQ</span>
+  <h2>자주 묻는 질문</h2>
+  <details><summary>하루에 몇 장을 뽑아야 하나요?</summary><p>한 장을 기본으로 권합니다. 아침에 한 장을 뽑아 하루의 테마로 삼고, 저녁에 기록을 돌아보는 방식이 가장 오래 이어가기 좋습니다.</p></details>
+  <details><summary>같은 카드가 자꾸 나와요.</summary><p>요즘 나에게 그 키워드가 자주 필요하다는 신호로 받아들여 보세요. 기록을 모아 보면 반복되는 흐름이 보이기도 합니다.</p></details>
+  <details><summary>내 별자리 오일 향이 마음에 들지 않아요.</summary><p>향의 선호는 그날의 컨디션에 따라서도 달라집니다. 억지로 쓰기보다 카드에 안내된 블렌딩 파트너와 섞어 보거나, 테마로 고르기 방법으로 다른 카드를 골라 보세요.</p></details>
+  <details><summary>로즈 오일만 따로 구매할 수 있나요?</summary><p>로즈 오토는 프리미엄 에디션 구성품으로 제공됩니다. 구매 방법은 훼이맵FateMap 스토어를 확인해 주세요.</p></details>
+  <details><summary>이 제품에 효능이 있나요?</summary><p>향기카드 20은 의약품이 아니며, 질병의 진단이나 치료를 목적으로 하지 않습니다. 하루를 여는 기분 전환과 나를 위한 작은 의식을 위한 라이프스타일 제품입니다.</p></details>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="brand">FateMap</div>
+  <p>훼이맵FateMap · 데일리 에너지 솔루션 아로마테라피 20</p>
+  <p style="margin-top:8px">본 제품은 의약품이 아닙니다. 안전 수칙을 확인한 뒤 사용해 주세요.</p>
+</div></footer>
+
+<script>
+const CARDS=[
+ {n:1,t:'sign',s:'♈',c:'양자리',o:'로즈마리',en:'Rosemary',kw:'열정·용기',ke:'Passion, Courage',m:'불 · 활동궁 · 지배성 화성',d:'또렷하고 상쾌한 허브향'},
+ {n:2,t:'sign',s:'♉',c:'황소자리',o:'일랑일랑',en:'Ylang Ylang',kw:'여유·향유',ke:'Ease, Delight',m:'흙 · 고정궁 · 지배성 금성',d:'짙고 달콤한 꽃향'},
+ {n:3,t:'sign',s:'♊',c:'쌍둥이자리',o:'페퍼민트',en:'Peppermint',kw:'환기·호기심',ke:'Refresh, Curiosity',m:'공기 · 변통궁 · 지배성 수성',d:'시원하면서 따뜻한 청량감'},
+ {n:4,t:'sign',s:'♋',c:'게자리',o:'로먼 캐모마일',en:'Roman Chamomile',kw:'위로·포용',ke:'Comfort, Embrace',m:'물 · 활동궁 · 지배성 달',d:'사과를 닮은 부드러운 꽃향'},
+ {n:5,t:'sign',s:'♌',c:'사자자리',o:'스위트 오렌지',en:'Sweet Orange',kw:'관용·온기',ke:'Generosity, Warmth',m:'불 · 고정궁 · 지배성 태양',d:'밝고 달콤한 시트러스'},
+ {n:6,t:'sign',s:'♍',c:'처녀자리',o:'라벤더',en:'Lavender',kw:'이완·평온',ke:'Relaxation, Serenity',m:'흙 · 변통궁 · 지배성 수성',d:'부드럽고 깨끗한 꽃·허브향'},
+ {n:7,t:'sign',s:'♎',c:'천칭자리',o:'제라늄 & 로즈',en:'Geranium & Rose',kw:'균형·사랑',ke:'Balance, Love',m:'공기 · 활동궁 · 지배성 금성',d:'장미를 닮은 싱그러운 꽃향과 깊은 장미향',sp:1},
+ {n:8,t:'sign',s:'♏',c:'전갈자리',o:'파출리',en:'Patchouli',kw:'심연·몰입',ke:'Depth, Intensity',m:'물 · 고정궁 · 지배성 명왕성(전통: 화성)',d:'어둡고 깊은 흙내음'},
+ {n:9,t:'sign',s:'♐',c:'사수자리',o:'주니퍼베리',en:'Juniper Berry',kw:'정화·도약',ke:'Purification, Leap',m:'불 · 변통궁 · 지배성 목성',d:'맑고 쌉싸름한 숲의 열매향'},
+ {n:10,t:'sign',s:'♑',c:'염소자리',o:'시더우드',en:'Cedarwood',kw:'굳건·기반',ke:'Firmness, Foundation',m:'흙 · 활동궁 · 지배성 토성',d:'곧고 건조한 나무향'},
+ {n:11,t:'sign',s:'♒',c:'물병자리',o:'유칼립투스',en:'Eucalyptus',kw:'통찰·확장',ke:'Insight, Expansion',m:'공기 · 고정궁 · 지배성 천왕성(전통: 토성)',d:'탁 트이는 청량한 잎 향'},
+ {n:12,t:'sign',s:'♓',c:'물고기자리',o:'프랑킨센스',en:'Frankincense',kw:'영성·보호',ke:'Spirituality, Protection',m:'물 · 변통궁 · 지배성 해왕성(전통: 목성)',d:'고요하고 성스러운 수지향'},
+ {n:13,t:'planet',s:'☿',c:'수성',o:'레몬',en:'Lemon',kw:'명쾌·자극',ke:'Clarity, Stimulation',m:'쌍둥이자리·처녀자리를 다스리는 행성',d:'날카롭고 밝은 시트러스'},
+ {n:14,t:'planet',s:'♀',c:'금성',o:'버가못',en:'Bergamot',kw:'조화·긍정',ke:'Harmony, Positivity',m:'황소자리·천칭자리를 다스리는 행성',d:'우아하고 산뜻한 시트러스'},
+ {n:15,t:'planet',s:'♂',c:'화성',o:'티트리',en:'Tea Tree',kw:'경계·해소',ke:'Boundary, Release',m:'양자리를 다스리는 행성',d:'강하고 깔끔한 약초향'},
+ {n:16,t:'planet',s:'♃',c:'목성',o:'그레이프후룻',en:'Grapefruit',kw:'풍요·활력',ke:'Abundance, Vitality',m:'사수자리를 다스리는 행성',d:'쌉싸름하고 생기 있는 시트러스'},
+ {n:17,t:'planet',s:'♄',c:'토성',o:'베티버',en:'Vetiver',kw:'현실·안착',ke:'Reality, Grounding',m:'염소자리를 다스리는 행성',d:'묵직하고 스모키한 뿌리향'},
+ {n:18,t:'planet',s:'♅',c:'천왕성',o:'레몬그라스',en:'Lemongrass',kw:'각성·돌파',ke:'Awakening, Breakthrough',m:'물병자리의 현대 지배성',d:'풀인데 레몬 향이 나는 반전의 향'},
+ {n:19,t:'planet',s:'♆',c:'해왕성',o:'클라리세이지',en:'Clary Sage',kw:'직관·흐름',ke:'Intuition, Flow',m:'물고기자리의 현대 지배성',d:'몽환적이고 부드러운 허브향'},
+ {n:20,t:'planet',s:'♇',c:'명왕성',o:'네롤리',en:'Neroli',kw:'변용·재생',ke:'Transformation, Rebirth',m:'전갈자리의 현대 지배성',d:'쓴 오렌지 나무의 달콤한 꽃향'}
+];
+const pad=n=>String(n).padStart(2,'0');
+const cardHTML=x=>`<article class="c${x.sp?' special':''}">
+  <div class="no">No.${pad(x.n)}</div><div class="sym">${x.s}</div>
+  <h4>${x.c}</h4>
+  <div class="oil">${x.o}</div><div class="en">${x.en}</div>
+  <div class="kw">${x.kw} <span class="en">· ${x.ke}</span></div>
+  <div class="meta">${x.d}</div>
+  <div class="meta" style="margin-top:6px">${x.m}</div>
+</article>`;
+const cat=document.getElementById('cat');
+function render(f){cat.innerHTML=CARDS.filter(x=>f==='all'||x.t===f).map(cardHTML).join('');}
+document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.filters button').forEach(o=>o.classList.remove('on'));b.classList.add('on');render(b.dataset.f);
+}));
+render('all');
+document.getElementById('drawBtn').addEventListener('click',()=>{
+  const x=CARDS[Math.floor(Math.random()*CARDS.length)];
+  document.getElementById('drawResult').innerHTML=cardHTML(x)+
+   `<p class="lead" style="margin-top:14px;font-size:.9rem">${x.n}번 오일을 열어 세 번 깊게 호흡하며 <b style="color:var(--gold-soft)">${x.kw}</b>의 하루를 떠올려 보세요.</p>`;
+});
+</script>
+</body>
+</html>
