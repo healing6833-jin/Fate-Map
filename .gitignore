@@ -1,0 +1,12 @@
+# 설치 파일 (GitHub 100MB 제한 초과, 재다운로드 가능)
+*.exe
+전자책/DRM_Client_for_Kyobo_Book.zip
+
+# 개발 의존성 (npm install 로 복구 가능)
+node_modules/
+
+# Windows / Office 임시 파일
+Thumbs.db
+desktop.ini
+~$*
+*.tmp
